@@ -1,0 +1,36 @@
+zerops:
+  - setup: dotnet
+    # ==== how to build your application ====
+    build:
+      # what technologies should the build
+      # container be based on (can be an array)
+      base: dotnet@9
+
+      # build your application
+      buildCommands:
+        - dotnet build testbackend.csproj -o app
+
+      # select which files / folders to deploy
+      # after the build successfully finished
+      # `~` can be used to mark starting point
+      # of deploy path, this example would deploy
+      # files in app folder without the folder
+      # itself
+      deployFiles: app/~
+
+    # ==== how to run your application ====
+    run:
+      # what technology should the runtime
+      # container be based on, can be extended
+      # in `run.prepareCommands` using
+      # `sudo zsc install nodejs@20`
+      base: dotnet@9
+
+      # what ports your app listens on
+      # and whether it supports http traffic
+      ports:
+        - port: 5000
+          httpSupport: true
+
+      # how to start your application
+      start: dotnet testbackend.dll
