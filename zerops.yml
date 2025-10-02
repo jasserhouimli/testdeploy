@@ -8,7 +8,7 @@ zerops:
 
       # build your application
       buildCommands:
-        - dotnet build testbackend.csproj -o app
+        - dotnet build testbackend/testbackend.csproj -o app
 
       # select which files / folders to deploy
       # after the build successfully finished
