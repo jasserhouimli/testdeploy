@@ -9,7 +9,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy
+            .AllowAnyOrigin()      // ✅ allow requests from any domain
+            .AllowAnyHeader()      // allow any headers
+            .AllowAnyMethod();     // allow GET, POST, OPTIONS, etc.
+    });
+});
 
 // Add SignalR
 builder.Services.AddSignalR();
@@ -29,7 +38,7 @@ if (app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
-
+app.UseCors();
 app.MapControllers();
 app.MapHub<TypeRaceHub>("/typeracehub");
 
