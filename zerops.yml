@@ -33,4 +33,4 @@ zerops:
           httpSupport: true
 
       # how to start your application
-      start: dotnet testbackend.dll
+      start: dotnet testbackend.dll --environment Development
