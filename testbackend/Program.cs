@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
+//builder.Services.AddEndpointsApiExplorer();
 
 
 // Add SignalR
@@ -27,7 +27,7 @@ if (app.Environment.IsDevelopment())
 
 //app.UseHttpsRedirection();
 //app.UseStaticFiles();
-app.UseRouting();
+//app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
