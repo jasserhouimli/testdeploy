@@ -26,7 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
-app.UseStaticFiles();
+//app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
@@ -34,6 +34,6 @@ app.MapControllers();
 app.MapHub<TypeRaceHub>("/typeracehub");
 
 // Serve index.html as default page
-app.MapFallbackToFile("index.html");
+//app.MapFallbackToFile("index.html");
 
 app.Run();
