@@ -16,7 +16,9 @@ zerops:
       # of deploy path, this example would deploy
       # files in app folder without the folder
       # itself
-      deployFiles: app/~
+      deployFiles:
+      - app/~
+      - testbackend/~/wwwroot
 
     # ==== how to run your application ====
     run:
